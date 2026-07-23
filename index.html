@@ -7,266 +7,310 @@
   <title>ThinkOfYou</title>
   <meta name="description" content="Create a personal digital postcard — your photo and words, shared as one link. Nothing prefilled."/>
   <meta name="application-name" content="ThinkOfYou"/>
-
-  <!-- Open Graph -->
   <meta property="og:title" content="ThinkOfYou"/>
   <meta property="og:description" content="Create a personal digital postcard — your photo and words, shared as one link."/>
   <meta property="og:type" content="website"/>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <!-- App Shell -->
-  <div id="app">
-    <!-- Header (shared) -->
-    <header id="site-header">
-      <div class="header-inner">
-        <a href="/" class="logo" id="logo-link">ThinkOfYou</a>
-      </div>
-    </header>
+<div id="app">
 
-    <!-- Page Views -->
-    <div id="page-home" class="page" style="display:none;">
-      <main class="home-main">
-        <section class="hero-section">
-          <h1 class="hero-title">Share the love<br/>with someone special</h1>
+  <!-- ═══ SHARED HEADER ═══ -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" id="logo-link">ThinkOfYou</a>
+    </div>
+  </header>
 
-          <div class="hero-cluster" aria-hidden="true">
-            <!-- Left postcard (front, tilted -15deg) -->
-            <div class="hero-postcard hero-postcard-left">
-              <div class="postcard-front-hero">
-                <img src="assets/postcard-parchment.png" alt="" class="postcard-bg-img"/>
-                <div class="postcard-photo-inset">
-                  <img src="assets/hero-trees.jpg" alt="" class="inset-photo"/>
-                </div>
-                <div class="postcard-hero-title" style="color:#ffffff">Thank You<br/>for Everything!</div>
-                <div class="postcard-noise"></div>
+  <!-- ═══════════════════════════════════════════
+       HOME PAGE
+  ════════════════════════════════════════════════ -->
+  <div id="page-home" class="page" style="display:none;">
+    <main class="home-main">
+      <section class="hero-section">
+        <h1 class="hero-title">Share the love<br/>with someone special</h1>
+
+        <div class="hero-cluster" aria-hidden="true">
+          <!-- Left postcard — front, tilted -15deg -->
+          <div class="hero-postcard hero-postcard-left">
+            <div class="postcard-front-hero">
+              <img src="assets/postcard-parchment.png" alt="" class="postcard-bg-img"/>
+              <div class="postcard-photo-inset">
+                <img src="assets/hero-trees.jpg" alt="" class="inset-photo"/>
               </div>
-            </div>
-
-            <!-- Star in middle -->
-            <div class="hero-star" aria-hidden="true">⭐</div>
-
-            <!-- Right postcard (back, tilted +15deg) -->
-            <div class="hero-postcard hero-postcard-right">
-              <div class="postcard-back-hero">
-                <img src="assets/postcard-parchment.png" alt="" class="postcard-bg-img"/>
-                <div class="postcard-noise"></div>
-                <div class="postcard-back-content">
-                  <div class="postcard-label-postcard">POSTCARD</div>
-                  <div class="postcard-label-to">to</div>
-                  <div class="postcard-separator-line"></div>
-                  <div class="postcard-address-lines">
-                    <div class="addr-line"></div>
-                    <div class="addr-line"></div>
-                    <div class="addr-line"></div>
-                  </div>
-                  <div class="postcard-stamp-slot"></div>
-                  <div class="postcard-stamp-img">
-                    <img src="assets/stamps/stamp-green.png" alt="stamp"/>
-                  </div>
-                  <div class="postcard-flower-decor">
-                    <img src="assets/flowers/flower-white.png" alt=""/>
-                  </div>
-                  <div class="postcard-label-from">from: <span>&nbsp;</span></div>
-                </div>
-              </div>
+              <div class="postcard-hero-title" style="color:#ffffff">Thank You<br/>for Everything!</div>
+              <div class="postcard-noise"></div>
             </div>
           </div>
 
-          <a href="/create" class="btn-primary hero-cta" id="create-cta-btn">Create a postcard</a>
-        </section>
-      </main>
-    </div>
+          <!-- Star -->
+          <div class="hero-star">⭐</div>
 
-    <!-- Create Page -->
-    <div id="page-create" class="page" style="display:none;">
-      <main class="create-main">
-        <div class="create-layout">
+          <!-- Right postcard — back, tilted +15deg -->
+          <div class="hero-postcard hero-postcard-right">
+            <div class="postcard-back-hero">
+              <img src="assets/postcard-parchment.png" alt="" class="postcard-bg-img"/>
+              <div class="postcard-noise"></div>
+              <div class="postcard-back-content">
+                <div class="pc-label-postcard">POSTCARD</div>
+                <div class="pc-label-to">to</div>
+                <div class="pc-sep-line"></div>
+                <div class="pc-addr-lines">
+                  <div class="addr-line"></div>
+                  <div class="addr-line"></div>
+                  <div class="addr-line"></div>
+                </div>
+                <div class="pc-stamp-slot"></div>
+                <div class="pc-stamp-wrap">
+                  <img src="assets/stamps/stamp-green.png" alt="stamp" class="pc-stamp-img"/>
+                </div>
+                <div class="pc-flower-wrap">
+                  <img src="assets/flowers/flower-white.png" alt="" class="pc-flower-img"/>
+                </div>
+                <div class="pc-label-from">from: <span>&nbsp;</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-          <!-- Right: Postcard Preview Panel -->
-          <div class="create-panel-col">
-            <!-- Spacer for mobile (so content scrolls below the sticky panel) -->
-            <div class="panel-spacer" aria-hidden="true"></div>
+        <a href="/create" class="btn-primary hero-cta" id="create-cta-btn">Create a postcard</a>
+      </section>
+    </main>
+  </div>
 
-            <div class="create-panel" id="create-panel">
-              <h2 class="panel-title">Design your postcard</h2>
+  <!-- ═══════════════════════════════════════════
+       CREATE PAGE
+  ════════════════════════════════════════════════ -->
+  <div id="page-create" class="page" style="display:none;">
+    <main class="create-main">
+      <div class="create-layout">
 
-              <div class="postcard-flip-area">
-                <!-- Flip container -->
-                <button class="flip-button-wrapper" id="flip-btn" aria-label="Show back of postcard" aria-pressed="false">
-                  <div class="flip-container" id="flip-container">
-                    <div class="flip-card">
-                      <!-- Front -->
-                      <div class="flip-card-front">
-                        <div class="postcard postcard-front" id="postcard-front">
-                          <label class="upload-label" for="photo-upload" id="upload-label">
-                            <input type="file" accept="image/*" id="photo-upload" class="upload-input"/>
-                            <div class="upload-dashed-border" aria-hidden="true"></div>
-                            <div class="upload-prompt" id="upload-prompt">
-                              <img src="assets/upload-icon.svg" alt="" width="32" height="32" class="upload-icon"/>
-                              <span class="upload-text">
-                                <strong>Click to upload a photo,</strong><br/>
-                                <span>or drag and drop</span>
-                              </span>
-                            </div>
-                            <img id="uploaded-photo" class="uploaded-photo" alt="" style="display:none;" src=""/>
-                          </label>
-                          <div class="postcard-noise" aria-hidden="true"></div>
-                          <!-- Title overlay on front -->
-                          <div class="postcard-title-overlay" id="postcard-title-overlay" style="display:none;"></div>
-                        </div>
-                      </div>
+        <!-- ── RIGHT COL: Postcard Preview ── -->
+        <div class="create-panel-col">
+          <div class="panel-spacer" aria-hidden="true"></div>
 
-                      <!-- Back -->
-                      <div class="flip-card-back">
-                        <div class="postcard postcard-back">
-                          <div class="postcard-noise" aria-hidden="true"></div>
-                          <div class="postcard-back-content">
-                            <div class="postcard-label-postcard">POSTCARD</div>
-                            <div class="postcard-label-to">to</div>
-                            <div class="postcard-separator-line"></div>
-                            <div class="postcard-address-lines">
-                              <div class="addr-line"></div>
-                              <div class="addr-line"></div>
-                              <div class="addr-line"></div>
-                            </div>
-                            <div class="postcard-stamp-slot" aria-hidden="true"></div>
-                            <div class="postcard-stamp-img">
-                              <img src="assets/stamps/stamp-green.png" alt="stamp"/>
-                            </div>
-                            <div class="postcard-flower-decor">
-                              <img src="assets/flowers/flower-white.png" alt=""/>
-                            </div>
-                            <div class="postcard-label-from">from: <span id="from-name">&nbsp;</span></div>
+          <div class="create-panel" id="create-panel">
+            <h2 class="panel-title">Design your postcard</h2>
+
+            <div class="postcard-flip-area">
+              <button class="flip-btn-wrap" id="flip-btn" aria-label="Show back of postcard" aria-pressed="false">
+                <div class="flip-container">
+                  <div class="flip-card" id="flip-card">
+
+                    <!-- FRONT -->
+                    <div class="flip-card-front">
+                      <div class="postcard postcard-front" id="postcard-front">
+                        <label class="upload-label" for="photo-upload">
+                          <input type="file" accept="image/*" id="photo-upload" class="upload-input"/>
+                          <div class="upload-dash" aria-hidden="true"></div>
+                          <div class="upload-prompt" id="upload-prompt">
+                            <img src="assets/upload-icon.svg" alt="" width="32" height="32"/>
+                            <span class="upload-text">
+                              <strong>Click to upload a photo,</strong><br/>
+                              <span>or drag and drop</span>
+                            </span>
                           </div>
+                          <img id="uploaded-photo" class="uploaded-photo" alt="" style="display:none;" src=""/>
+                        </label>
+                        <!-- Title overlay -->
+                        <div class="front-title-overlay" id="front-title-overlay"></div>
+                        <div class="postcard-noise" aria-hidden="true"></div>
+                      </div>
+                    </div>
+
+                    <!-- BACK -->
+                    <div class="flip-card-back">
+                      <div class="postcard postcard-back" id="postcard-back">
+                        <div class="postcard-noise" aria-hidden="true"></div>
+                        <div class="postcard-back-content">
+                          <div class="pc-label-postcard">POSTCARD</div>
+                          <div class="pc-label-to">to</div>
+                          <!-- Live "to" name -->
+                          <div class="pc-to-name" id="pc-to-name"></div>
+                          <div class="pc-sep-line"></div>
+                          <!-- Message preview -->
+                          <div class="pc-message-preview" id="pc-message-preview"></div>
+                          <div class="pc-addr-lines">
+                            <div class="addr-line"></div>
+                            <div class="addr-line"></div>
+                            <div class="addr-line"></div>
+                          </div>
+                          <div class="pc-stamp-slot"></div>
+                          <div class="pc-stamp-wrap" id="pc-stamp-wrap">
+                            <img src="assets/stamps/stamp-green.png" alt="stamp" class="pc-stamp-img" id="pc-stamp-img"/>
+                          </div>
+                          <div class="pc-flower-wrap" id="pc-flower-wrap">
+                            <img src="assets/flowers/flower-white.png" alt="" class="pc-flower-img" id="pc-flower-img"/>
+                          </div>
+                          <div class="pc-label-from">from: <span id="pc-from-name">&nbsp;</span></div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </button>
 
-                <button type="button" class="flip-hint-btn" id="flip-hint-btn">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <g transform="translate(2 4.5)">
-                      <path d="M19 5H5.5C3.01472 5 1 7.01472 1 9.5C1 11.9853 3.01472 14 5.5 14H10M19 5L15 1M19 5L15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                  </svg>
-                  Click to flip
-                </button>
-              </div>
+                  </div><!-- /flip-card -->
+                </div><!-- /flip-container -->
+              </button>
 
-              <!-- Share button (desktop) -->
-              <div class="share-btn-desktop">
-                <button type="button" class="btn-share" id="share-btn-desktop" disabled>Share</button>
-              </div>
+              <button type="button" class="flip-hint-btn" id="flip-hint-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <g transform="translate(2 4.5)">
+                    <path d="M19 5H5.5C3.01472 5 1 7.01472 1 9.5C1 11.9853 3.01472 14 5.5 14H10M19 5L15 1M19 5L15 9"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </g>
+                </svg>
+                <span id="flip-hint-text">Click to flip</span>
+              </button>
+            </div>
+
+            <!-- Desktop share button -->
+            <div class="share-btn-desktop">
+              <button type="button" class="btn-share" id="share-btn-desktop" disabled>Share</button>
             </div>
           </div>
+        </div>
 
-          <!-- Left: Controls -->
-          <div class="create-controls-col">
+        <!-- ── LEFT COL: Controls ── -->
+        <div class="create-controls-col">
+          <!-- FRONT CONTROLS (shown when postcard front is visible) -->
+          <div class="controls-section" id="controls-front">
             <div class="controls-inner">
-              <!-- Title Input -->
               <div class="control-group">
                 <label for="title-input" class="control-label">Add a title (optional):</label>
-                <div class="input-wrapper">
-                  <input
-                    type="text"
-                    id="title-input"
-                    maxlength="25"
-                    placeholder="(e.g. Happy Birthday)"
-                    class="title-input"
-                    autocomplete="off"
-                  />
-                  <div class="char-count">
-                    <span id="title-char-count">0</span>/25
-                  </div>
-                </div>
+                <input type="text" id="title-input" maxlength="25"
+                  placeholder="(e.g. Happy Birthday)" class="line-input" autocomplete="off"/>
+                <div class="char-count"><span id="title-char-count">0</span>/25</div>
               </div>
 
-              <!-- Title Color Picker -->
               <div class="control-group">
                 <span class="control-label">Pick a title color:</span>
                 <div class="color-picker">
-                  <button
-                    type="button"
-                    class="color-swatch swatch-white selected"
-                    id="color-white"
-                    aria-label="White title"
-                    aria-pressed="true"
-                    data-color="white"
-                  ></button>
-                  <button
-                    type="button"
-                    class="color-swatch swatch-black"
-                    id="color-black"
-                    aria-label="Black title"
-                    aria-pressed="false"
-                    data-color="black"
-                  ></button>
-                </div>
-              </div>
-
-              <!-- From Name -->
-              <div class="control-group">
-                <label for="from-input" class="control-label">Your name (optional):</label>
-                <div class="input-wrapper">
-                  <input
-                    type="text"
-                    id="from-input"
-                    maxlength="30"
-                    placeholder="(e.g. Emma)"
-                    class="title-input"
-                    autocomplete="off"
-                  />
+                  <button type="button" class="color-swatch swatch-white selected"
+                    id="color-white" aria-label="White title" aria-pressed="true" data-color="white"></button>
+                  <button type="button" class="color-swatch swatch-black"
+                    id="color-black" aria-label="Black title" aria-pressed="false" data-color="black"></button>
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
-      </main>
+          <!-- BACK CONTROLS (shown when postcard back is visible) -->
+          <div class="controls-section" id="controls-back" style="display:none;">
+            <div class="controls-inner">
 
-      <!-- Mobile bottom bar -->
-      <div class="mobile-bottom-bar">
-        <div class="mobile-bottom-inner">
-          <button type="button" class="btn-share" id="share-btn-mobile" disabled>Share</button>
+              <!-- To -->
+              <div class="control-group">
+                <label for="to-input" class="control-label">To:</label>
+                <input type="text" id="to-input" maxlength="25"
+                  placeholder="Who are you thinking of?" class="line-input" autocomplete="off"/>
+                <div class="char-count"><span id="to-char-count">0</span>/25</div>
+              </div>
+
+              <!-- From -->
+              <div class="control-group">
+                <label for="from-input" class="control-label">From:</label>
+                <input type="text" id="from-input" maxlength="25"
+                  placeholder="Write your name" class="line-input" autocomplete="off"/>
+                <div class="char-count"><span id="from-char-count">0</span>/25</div>
+              </div>
+
+              <!-- Stamp picker -->
+              <div class="control-group">
+                <span class="control-label">Pick your stamp:</span>
+                <div class="picker-row" id="stamp-picker">
+                  <button type="button" class="stamp-btn selected" data-stamp="green" aria-pressed="true" aria-label="Green stamp">
+                    <img src="assets/stamps/stamp-green.png" alt="Green stamp"/>
+                  </button>
+                  <button type="button" class="stamp-btn" data-stamp="blue" aria-pressed="false" aria-label="Blue stamp">
+                    <img src="assets/stamps/stamp-blue.png" alt="Blue stamp"/>
+                  </button>
+                  <button type="button" class="stamp-btn" data-stamp="darkgreen" aria-pressed="false" aria-label="Dark green stamp">
+                    <img src="assets/stamps/stamp-darkgreen.png" alt="Dark green stamp"/>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="control-group">
+                <label for="message-input" class="control-label">Write your message:</label>
+                <div class="textarea-wrap">
+                  <textarea id="message-input" maxlength="180" rows="5"
+                    placeholder="Write something from your heart…" class="message-textarea"></textarea>
+                  <svg class="resize-icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+                    <path stroke="#717680" d="M11 1v10H1"/>
+                    <path stroke="#717680" d="M11 11 4 4"/>
+                  </svg>
+                </div>
+                <div class="char-count"><span id="msg-char-count">0</span>/180</div>
+              </div>
+
+              <!-- Flower picker -->
+              <div class="control-group">
+                <span class="control-label">Pick your flower:</span>
+                <div class="picker-row flower-picker" id="flower-picker">
+                  <button type="button" class="flower-btn selected" data-flower="white" aria-pressed="true" aria-label="White flowers">
+                    <img src="assets/flowers/flower-white.png" alt="White flowers"/>
+                  </button>
+                  <button type="button" class="flower-btn" data-flower="meadow" aria-pressed="false" aria-label="Meadow flowers">
+                    <img src="assets/flowers/flower-meadow.png" alt="Meadow flowers"/>
+                  </button>
+                  <button type="button" class="flower-btn" data-flower="blue" aria-pressed="false" aria-label="Blue flowers">
+                    <img src="assets/flowers/flower-blue.png" alt="Blue flowers"/>
+                  </button>
+                  <button type="button" class="flower-btn" data-flower="botanical" aria-pressed="false" aria-label="Botanical flowers">
+                    <img src="assets/flowers/flower-botanical.png" alt="Botanical flowers"/>
+                  </button>
+                  <button type="button" class="flower-btn" data-flower="yellow" aria-pressed="false" aria-label="Yellow flowers">
+                    <img src="assets/flowers/flower-yellow.png" alt="Yellow flowers"/>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
+
+      </div>
+    </main>
+
+    <!-- Mobile bottom bar -->
+    <div class="mobile-bottom-bar">
+      <div class="mobile-bottom-inner">
+        <button type="button" class="btn-share" id="share-btn-mobile" disabled>Share</button>
       </div>
     </div>
   </div>
 
-  <!-- Footer (shared, fixed) -->
-  <footer id="site-footer">
-    Designed &amp; built by
-    <a href="https://www.instagram.com/iryna_lupan/" target="_blank" rel="noopener noreferrer">@iryna_lupan</a>
-    with Cursor
-  </footer>
+</div><!-- /app -->
 
-  <!-- Share Modal -->
-  <div id="share-modal" class="modal-overlay" style="display:none;" aria-modal="true" role="dialog">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h3 class="modal-title">Share your postcard</h3>
-        <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>
+<!-- ═══ SHARED FOOTER ═══ -->
+<footer id="site-footer">
+  Designed &amp; built by
+  <a href="https://www.instagram.com/iryna_lupan/" target="_blank" rel="noopener noreferrer">@iryna_lupan</a>
+  with Cursor
+</footer>
+
+<!-- ═══ SHARE MODAL ═══ -->
+<div id="share-modal" class="modal-overlay" style="display:none;" aria-modal="true" role="dialog" aria-labelledby="modal-title">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-title">Share your postcard 💌</h3>
+      <button class="modal-close" id="modal-close-btn" aria-label="Close">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-desc">Your postcard is ready! Copy the link below to share it.</p>
+      <div class="share-link-box">
+        <input type="text" id="share-link-input" class="share-link-input" readonly/>
+        <button class="btn-copy" id="copy-link-btn">Copy</button>
       </div>
-      <div class="modal-body">
-        <p class="modal-desc">Your postcard is ready! Copy the link below to share it.</p>
-        <div class="share-link-box">
-          <input type="text" id="share-link-input" class="share-link-input" readonly value="https://think-of-you.vercel.app/p/your-postcard"/>
-          <button class="btn-copy" id="copy-link-btn">Copy</button>
-        </div>
-        <p class="modal-hint">Or download your postcard image:</p>
-        <button class="btn-download" id="download-btn">Download postcard</button>
-      </div>
+      <p class="modal-hint">Or download as an image:</p>
+      <button class="btn-download" id="download-btn">⬇ Download postcard</button>
     </div>
   </div>
+</div>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
