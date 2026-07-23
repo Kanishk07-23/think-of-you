@@ -228,7 +228,7 @@
     msgInput.addEventListener('input', () => {
       state.message = msgInput.value;
       msgCount.textContent = state.message.length;
-      msgCount.parentElement.classList.toggle('at-limit', state.message.length >= 180);
+      msgCount.parentElement.classList.toggle('at-limit', state.message.length >= 1000);
       pcMsgPreview.textContent = state.message;
       updateShareButtons();
     });
