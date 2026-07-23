@@ -12,7 +12,7 @@
   <meta property="og:type" content="website"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Dancing+Script:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Moon+Dance&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
@@ -58,19 +58,20 @@
                 <div class="pc-label-postcard">POSTCARD</div>
                 <div class="pc-label-to">to</div>
                 <div class="pc-sep-line"></div>
-                <div class="pc-addr-lines">
-                  <div class="addr-line"></div>
-                  <div class="addr-line"></div>
-                  <div class="addr-line"></div>
-                </div>
+                <img src="/assets/postcard-address-lines.svg" alt="" class="pc-addr-lines" aria-hidden="true" />
                 <div class="pc-stamp-slot"></div>
                 <div class="pc-stamp-wrap">
-                  <img src="assets/stamps/stamp-green.png" alt="stamp" class="pc-stamp-img"/>
+                  <img src="/assets/stamps/stamp-green.png" class="pc-stamp-img" alt="" aria-hidden="true" />
                 </div>
                 <div class="pc-flower-wrap">
-                  <img src="assets/flowers/flower-white.png" alt="" class="pc-flower-img"/>
+                  <div class="pc-flower-inner">
+                    <img src="/assets/flowers/flower-white.png" class="pc-flower-img" alt="" aria-hidden="true" />
+                  </div>
                 </div>
                 <div class="pc-label-from">from: <span>&nbsp;</span></div>
+                <div class="pc-message-preview">
+                  <p class="pc-message-preview-text"></p>
+                </div>
               </div>
             </div>
           </div>
@@ -131,19 +132,18 @@
                           <!-- Live "to" name -->
                           <div class="pc-to-name" id="pc-to-name"></div>
                           <div class="pc-sep-line"></div>
-                          <!-- Message preview -->
-                          <div class="pc-message-preview" id="pc-message-preview"></div>
-                          <div class="pc-addr-lines">
-                            <div class="addr-line"></div>
-                            <div class="addr-line"></div>
-                            <div class="addr-line"></div>
-                          </div>
+                          <img src="/assets/postcard-address-lines.svg" alt="" class="pc-addr-lines" aria-hidden="true" />
                           <div class="pc-stamp-slot"></div>
                           <div class="pc-stamp-wrap" id="pc-stamp-wrap">
                             <img src="assets/stamps/stamp-green.png" alt="stamp" class="pc-stamp-img" id="pc-stamp-img"/>
                           </div>
                           <div class="pc-flower-wrap" id="pc-flower-wrap">
-                            <img src="assets/flowers/flower-white.png" alt="" class="pc-flower-img" id="pc-flower-img"/>
+                            <div class="pc-flower-inner">
+                              <img src="assets/flowers/flower-white.png" alt="" class="pc-flower-img" id="pc-flower-img"/>
+                            </div>
+                          </div>
+                          <div class="pc-message-preview">
+                            <p class="pc-message-preview-text" id="pc-message-preview"></p>
                           </div>
                           <div class="pc-label-from">from: <span id="pc-from-name">&nbsp;</span></div>
                         </div>
