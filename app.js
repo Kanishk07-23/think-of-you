@@ -132,7 +132,12 @@
     const downloadBtn   = $('download-btn');
 
     // ── Flip ─────────────────────────────────────────
-    function toggleFlip() {
+    function toggleFlip(e) {
+      if (e) {
+        // If clicking the upload area on the front, let the upload happen, don't flip
+        const isUploadClick = e.target.closest('.upload-label') || e.target.closest('input[type="file"]');
+        if (!state.isFlipped && isUploadClick) return;
+      }
       state.isFlipped = !state.isFlipped;
       flipCard.classList.toggle('flipped', state.isFlipped);
       flipBtn.setAttribute('aria-pressed', String(state.isFlipped));
