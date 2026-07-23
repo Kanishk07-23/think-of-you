@@ -1,0 +1,12 @@
+{
+  "name": "think-of-you",
+  "version": "1.0.0",
+  "description": "ThinkOfYou — Create personal digital postcards",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["postcard", "digital", "greeting"],
+  "author": "",
+  "license": "MIT"
+}
