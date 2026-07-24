@@ -163,14 +163,14 @@ input, textarea { font-family: inherit; }
   letter-spacing: 0.84px; color: #5b5b5b; pointer-events: none; white-space: nowrap;
 }
 .pc-label-to {
-  position: absolute; left: 50%; top: 52px; transform: translateX(-50%);
-  font-family: var(--font-script); font-size: 20px; line-height: 26px;
+  position: absolute; left: 125px; top: 42px; transform: translateX(-50%);
+  font-family: var(--font-script); font-size: 18px; line-height: 24px;
   color: #5b5b5b; pointer-events: none;
 }
 .pc-to-name {
-  position: absolute; left: 123px; top: 60px;
-  width: 254px; display: flex; justify-content: center; text-align: center;
-  font-family: var(--font-script); font-size: 22px; line-height: 32px;
+  position: absolute; left: 5px; top: 70px;
+  width: 240px; text-align: center;
+  font-family: var(--font-script); font-size: 18px; line-height: 26px;
   color: #5b5b5b; pointer-events: none; white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis;
 }
