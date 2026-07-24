@@ -158,76 +158,78 @@ input, textarea { font-family: inherit; }
 .postcard-back-content { position: relative; z-index: 2; width: 100%; height: 100%; }
 
 .pc-label-postcard {
-  position: absolute; left: 50%; top: 20px; transform: translateX(-50%);
-  font-family: var(--font-serif); font-size: 12px; line-height: 14px;
-  letter-spacing: 0.72px; color: #5b5b5b; pointer-events: none; white-space: nowrap;
+  position: absolute; left: 50%; top: 28px; transform: translateX(-50%);
+  font-family: var(--font-serif); font-size: 14px; line-height: 17px;
+  letter-spacing: 0.84px; color: #5b5b5b; pointer-events: none; white-space: nowrap;
 }
 .pc-label-to {
-  position: absolute; left: 50%; top: 40px; transform: translateX(-50%);
-  font-family: var(--font-script); font-size: 16px; line-height: 20px;
+  position: absolute; left: 50%; top: 52px; transform: translateX(-50%);
+  font-family: var(--font-script); font-size: 20px; line-height: 26px;
   color: #5b5b5b; pointer-events: none;
 }
 .pc-to-name {
-  position: absolute; left: 87px; top: 47px;
-  width: 180px; display: flex; justify-content: center; text-align: center;
-  font-family: var(--font-script); font-size: 24px; line-height: 32px;
+  position: absolute; left: 123px; top: 60px;
+  width: 254px; display: flex; justify-content: center; text-align: center;
+  font-family: var(--font-script); font-size: 30px; line-height: 40px;
   color: #5b5b5b; pointer-events: none; white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis;
 }
 .pc-sep-line {
-  position: absolute; left: 50%; top: calc(50% + 37px);
+  position: absolute; left: 50%; top: calc(50% + 50px);
   transform: translate(-50%, -50%);
-  width: 0.5px; height: 140px; background: #969084; pointer-events: none; z-index: 0;
+  width: 0.5px; height: 196px; background: #969084; pointer-events: none; z-index: 0;
 }
+/* The address-lines image — right side below the vertical divider */
 .pc-addr-lines {
-  position: absolute; left: 195px; top: 111px; z-index: 1;
-  width: 140.69px; height: 84px; object-fit: fill; pointer-events: none;
+  position: absolute; left: 275px; top: 156px; z-index: 1;
+  width: 199px; height: 118px; object-fit: fill; pointer-events: none;
 }
+/* Stamp slot (dashed rectangle in top right) */
 .pc-stamp-slot {
-  position: absolute; left: 285.89px; top: 24px; z-index: 1;
-  height: 60px; width: 44px; border-radius: 2px;
+  position: absolute; right: 20px; top: 28px; z-index: 1;
+  height: 84px; width: 62px; border-radius: 2px;
   border: 0.5px dashed #969084; pointer-events: none;
 }
+/* Stamp image sits inside the slot */
 .pc-stamp-wrap {
-  position: absolute; left: 282.86px; top: 17.86px;
-  z-index: 2; width: 62.28px; height: 62.28px;
+  position: absolute; right: 12px; top: 20px;
+  z-index: 2; width: 88px; height: 88px;
   display: flex; align-items: center; justify-content: center; pointer-events: none;
 }
 .pc-stamp-img {
-  width: 54px; height: 60px; object-fit: contain; object-position: bottom;
+  width: 76px; height: 84px; object-fit: contain; object-position: bottom;
   transform: rotate(-2.22deg); transition: opacity 0.2s;
 }
+/* Flower — purely decorative watermark on the left, no slot/box */
 .pc-flower-wrap {
-  position: absolute; left: 18px; top: 64px; z-index: 2;
-  width: 123.82px; height: 167.66px;
+  position: absolute; left: 10px; top: 60px; z-index: 2;
+  width: 175px; height: 236px;
   display: flex; align-items: center; justify-content: center; pointer-events: none;
 }
 .pc-flower-inner {
-  width: 88px; height: 150px; position: relative; transform: rotate(-15deg);
+  width: 125px; height: 212px; position: relative; transform: rotate(-15deg);
 }
 .pc-flower-img {
   position: absolute; left: -35.24%; top: -15.44%;
   width: 170.48%; height: 131.93%; object-fit: contain;
   transition: opacity 0.2s; mix-blend-mode: multiply; pointer-events: none;
 }
+/* Message area — left side, below the 'to' name */
 .pc-message-preview {
-  position: absolute; left: 195px; top: 111px; z-index: 3;
-  width: 140.69px; height: 84px; overflow-y: auto; pointer-events: auto;
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
-  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
-}
-.pc-message-preview::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome/Safari/Webkit */
+  position: absolute; left: 18px; top: 108px; z-index: 3;
+  width: 235px; height: 210px;
+  overflow: hidden; pointer-events: none;
 }
 .pc-message-preview-text {
   width: 100%; text-align: left;
-  font-family: 'Caveat', cursive; font-size: 12px; line-height: 14px;
+  font-family: 'Caveat', cursive; font-size: 14px; line-height: 18px;
   color: #5b5b5b; word-break: break-word; white-space: pre-wrap; margin: 0;
 }
+/* From label — bottom right of right column */
 .pc-label-from {
-  position: absolute; left: 195px; top: 209px;
+  position: absolute; left: 275px; top: 296px;
   display: flex; align-items: baseline; gap: 4px;
-  font-family: var(--font-script); font-size: 16px; line-height: 20px;
+  font-family: var(--font-script); font-size: 20px; line-height: 26px;
   color: #5b5b5b; pointer-events: none;
 }
 
@@ -317,7 +319,7 @@ input, textarea { font-family: inherit; }
 }
 .flip-btn-wrap:focus-visible { box-shadow: 0 0 0 2px rgba(10,10,10,0.2); }
 
-.flip-container { width: 354px; height: 250px; perspective: 1000px; }
+.flip-container { width: 500px; height: 350px; perspective: 1000px; }
 
 .flip-card {
   position: relative; width: 100%; height: 100%;
@@ -336,7 +338,7 @@ input, textarea { font-family: inherit; }
 .flip-card.flipped .flip-card-front { pointer-events: none; }
 
 .postcard {
-  position: relative; width: 354px; height: 250px;
+  position: relative; width: 500px; height: 350px;
   border-radius: 2px; overflow: hidden;
   box-shadow: var(--shadow-postcard); background: var(--paper);
 }
