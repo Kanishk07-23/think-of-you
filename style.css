@@ -170,7 +170,7 @@ input, textarea { font-family: inherit; }
 .pc-to-name {
   position: absolute; left: 123px; top: 60px;
   width: 254px; display: flex; justify-content: center; text-align: center;
-  font-family: var(--font-script); font-size: 28px; line-height: 40px;
+  font-family: var(--font-script); font-size: 22px; line-height: 32px;
   color: #5b5b5b; pointer-events: none; white-space: nowrap;
   overflow: hidden; text-overflow: ellipsis;
 }
