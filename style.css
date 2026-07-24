@@ -214,10 +214,10 @@ input, textarea { font-family: inherit; }
   width: 170.48%; height: 131.93%; object-fit: contain;
   transition: opacity 0.2s; mix-blend-mode: multiply; pointer-events: none;
 }
-/* Message area — left side, below the 'to' name */
+/* Message area — right column, written over the address lines */
 .pc-message-preview {
-  position: absolute; left: 18px; top: 108px; z-index: 3;
-  width: 235px; height: 210px;
+  position: absolute; left: 275px; top: 108px; z-index: 3;
+  width: 199px; height: 170px;
   overflow: hidden; pointer-events: none;
 }
 .pc-message-preview-text {
