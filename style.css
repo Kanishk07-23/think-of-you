@@ -179,11 +179,8 @@ input, textarea { font-family: inherit; }
   transform: translate(-50%, -50%);
   width: 0.5px; height: 196px; background: #969084; pointer-events: none; z-index: 0;
 }
-/* The address-lines image — right side below the vertical divider */
-.pc-addr-lines {
-  position: absolute; left: 275px; top: 156px; z-index: 1;
-  width: 199px; height: 118px; object-fit: fill; pointer-events: none;
-}
+/* Address lines are now drawn by CSS gradient inside the message preview */
+.pc-addr-lines { display: none; }
 /* Stamp slot (dashed rectangle in top right) */
 .pc-stamp-slot {
   position: absolute; right: 20px; top: 28px; z-index: 1;
@@ -214,22 +211,33 @@ input, textarea { font-family: inherit; }
   width: 170.48%; height: 131.93%; object-fit: contain;
   transition: opacity 0.2s; mix-blend-mode: multiply; pointer-events: none;
 }
-/* Message area — right column, written over the address lines */
+
+/* Message area — right column, lines drawn by CSS gradient */
 .pc-message-preview {
-  position: absolute; left: 275px; top: 108px; z-index: 3;
-  width: 199px; height: 170px;
+  position: absolute; left: 275px; top: 110px; z-index: 3;
+  width: 196px; height: 180px;
+  /* Each row = 15px: 14px text + 1px ruled line at the bottom */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 14px,
+    #c8c4bc 14px,
+    #c8c4bc 15px
+  );
   overflow: hidden; pointer-events: none;
 }
 .pc-message-preview-text {
   width: 100%; text-align: left;
-  font-family: 'Caveat', cursive; font-size: 14px; line-height: 18px;
+  font-family: 'Caveat', cursive; font-size: 12px; line-height: 15px;
   color: #5b5b5b; word-break: break-word; white-space: pre-wrap; margin: 0;
+  /* push text 1px above each line so baseline sits on the ruled line */
+  position: relative; top: -1px;
 }
-/* From label — bottom right of right column */
+/* From label — right column, below message area */
 .pc-label-from {
-  position: absolute; left: 275px; top: 296px;
+  position: absolute; left: 275px; top: 300px;
   display: flex; align-items: baseline; gap: 4px;
-  font-family: var(--font-script); font-size: 20px; line-height: 26px;
+  font-family: var(--font-script); font-size: 18px; line-height: 24px;
   color: #5b5b5b; pointer-events: none;
 }
 
